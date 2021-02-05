@@ -1,0 +1,528 @@
+html,
+body {
+	-webkit-scroll-behavio: smooth;
+	scroll-behavior: smooth;
+}
+
+// Grid header
+.grid-header {
+	display: grid;
+	// grid-template-rows: 0 minmax(200px, 1fr);
+
+	position: relative;
+	// grid-template-rows: 0 minmax(300px, 1fr);
+
+	&__navbar {
+		z-index: 10;
+	}
+}
+
+// Banner principal de la página
+.banner {
+	position: relative;
+	overflow: hidden;
+	height: 100vh;
+
+	&--indicator {
+		position: absolute;
+		margin: auto;
+		left: 0;
+		right: 0;
+		top: auto;
+		bottom: 0;
+
+		.indicator--item {
+			background-color: rgba(white, 0.6);
+		}
+
+		.indicator--selected {
+			background-color: saturate($color-base, 20);
+		}
+	}
+
+	&__images {
+		position: relative;
+		max-width: 100vw;
+		height: 100%;
+		overflow: hidden;
+
+		// Pseudo elementos
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			margin: auto;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+
+			background-color: rgba(black, 0.4);
+			z-index: 1;
+		}
+	}
+
+	&__img {
+		display: block;
+		position: absolute;
+
+		top: 0;
+		bottom: auto;
+		--width: 100vw;
+		--height: 100vh;
+
+		// Si el navegador no soporta object-fit
+		// en la imagen se aplicarán por defecto las
+		// siguientes reglas CSS
+		@media #{$portrait} {
+			min-width: 100vw;
+			height: var(--height);
+			left: calc(var(--width) / -1.5);
+		}
+
+		@media #{$landscape} {
+			min-height: 100vh;
+			width: var(--width);
+		}
+
+		// Si el navegador las soportan, se aplicarán las
+		// siguientes reglas CSS a la imagen:
+		@supports ((object-fit: cover) and (object-position: top center)) {
+			object-fit: cover;
+			object-position: top center;
+			width: var(--width);
+			height: var(--height);
+			left: 0;
+		}
+	}
+}
+
+// Menú de navegación
+.menu {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	--height: 37px;
+	--height: 43px;
+
+	&--horizontal,
+	&__item,
+	&__enlace {
+		--modo-pc: 1200px;
+		--modo-smartphone: calc(var(--modo-pc) - 1px);
+
+		@media screen and (min-width: 1200px) {
+			display: flex;
+		}
+
+		@media screen and (max-width: 1199px) {
+			&:not(.menu__item--smartphone):not(.menu--login):not(.menu__enlace--smartphone) {
+				display: none;
+			}
+		}
+
+		min-width: auto !important;
+	}
+
+	&__item,
+	&__enlace {
+		position: relative;
+		align-items: center;
+		color: darken($color-base, 20);
+
+		&--separador,
+		&--dashboard {
+			&::after {
+				content: "";
+				display: black;
+				position: absolute;
+				margin: auto;
+				left: 0;
+				right: auto;
+				top: 0;
+				bottom: 0;
+				height: 25px;
+				border-left: 1px solid rgba($color-base, 0.4);
+			}
+		}
+	}
+
+	&--vertical {
+		display: block;
+	}
+
+	&--horizontal {
+		flex-wrap: wrap;
+	}
+
+	&--content-modal {
+		position: fixed;
+		margin: auto;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+
+		color: black;
+		background-color: white;
+		z-index: 999;
+	}
+
+	&__item {
+		height: var(--height);
+		display: flex;
+		flex-shrink: 1;
+		flex-grow: 0;
+
+		&--separador {
+			padding-left: calc(var(--height) / 3);
+			color: darken($color-base, 40);
+		}
+	}
+
+	&__enlace {
+		--relleno: calc(var(--height) / 3);
+
+		&:not(&--smartphone) {
+			padding: 0 var(--relleno);
+		}
+
+		&:not(&--dashboard):not(&--dashboard-smartphone) {
+			font-variant: small-caps;
+		}
+
+		height: inherit;
+
+		&:hover {
+			text-decoration: none;
+			color: darken($color-base, 10);
+		}
+
+		&::before {
+			content: "";
+			display: block;
+			position: absolute;
+			margin: auto;
+			left: 0;
+			right: 0;
+			top: auto;
+			bottom: calc(var(--relleno) / 2);
+			width: 0;
+			opacity: 0;
+			transition: 300ms ease;
+		}
+
+		&:not(&--carrito):not(&--dashboard):not(&--login):not(&--dashboard-smartphone) {
+			&::before {
+				border-bottom: 1px solid;
+			}
+		}
+
+		&:hover {
+			&::before {
+				width: calc(100% - var(--relleno) * 2);
+				opacity: 1;
+			}
+		}
+
+		&--dashboard {
+			color: darken($color-base, 30);
+			transition: 300ms;
+		}
+
+		&--login {
+			--padding: 2px;
+
+			padding-right: var(--padding);
+			&:not(:first-of-type) {
+				padding-left: var(--padding);
+			}
+		}
+
+		&--smartphone {
+			display: flex;
+			padding: 0 10px;
+		}
+	}
+
+	&--login {
+		background-color: rgba($color-base, 0.1);
+	}
+}
+
+// Barra de navegación de la página
+.navbar {
+	@media screen and (min-width: 1200px) {
+		--height: 100px;
+	}
+
+	&--scrolltop {
+		transition: 300ms ease;
+		--height: 60px;
+	}
+
+	// Logotipo de kendys
+	&__logo {
+		max-height: 100%;
+		transition: 300ms ease;
+
+		@media screen and (max-width: 340px) {
+			height: 30px;
+		}
+
+		@media screen and (min-width: 341px) {
+			height: 37px;
+		}
+	}
+
+	// Menu para Smaartphone
+	&--smartphone {
+		display: block !important;
+		position: relative;
+		background-color: white;
+		padding: 10px;
+		margin-left: auto;
+		max-width: 450px;
+		min-height: 100vh;
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		border-bottom: 1px solid rgba($color-base, 0.3);
+		padding-bottom: 4px;
+	}
+}
+
+.navbar {
+	position: relative;
+	transition: 300ms ease;
+
+	&:not(&--smartphone) {
+		justify-content: space-between;
+		align-items: center;
+		margin: 0 auto;
+		min-height: var(--height);
+	}
+
+	@media screen and (min-width: 1100px) {
+		&:not(&--smartphone) {
+			width: 90%;
+		}
+	}
+
+	@media screen and (max-width: 1099px) {
+		width: 100%;
+	}
+
+	z-index: 2;
+
+	// Toggle Menú
+	&__label {
+		// Provisionalmente se establece esta propiedad
+		display: none;
+
+		--proporcion: 40px;
+
+		color: white;
+		cursor: default;
+		width: var(--proporcion);
+		height: var(--proporcion);
+		max-height: 100%;
+		border-radius: var(--border-radius-button);
+		// display: flex;
+		align-items: center;
+		justify-content: center;
+		transition: 300ms ease;
+
+		@media #{$media-max-width-tablet} {
+			display: flex;
+			z-index: 1;
+		}
+
+		&:hover {
+			background-color: rgba(saturate($color-base, 30), 0.5);
+		}
+	}
+
+	&__checkbox {
+		display: none;
+	}
+
+	&__checkbox:checked + &__label {
+		// background-color: rgba(darken($color-base, 30), 0.5);
+
+		&:hover {
+			background-color: rgba(darken(saturate($color-base, 60), 20), 0.5);
+		}
+	}
+
+	&__checkbox:checked ~ &__menu {
+		// background-color: rgba(saturate($color-base, 40), 0.5);
+
+		@media #{$media-max-width-tablet} {
+			transform: rotateX(0deg);
+		}
+
+		@media #{$media-tablet} {
+			transform: rotateX(0deg);
+		}
+	}
+
+	// Menú de navegación
+	&__menu {
+		display: flex;
+		height: 40px;
+
+		transition: 600ms cubic-bezier(0, 0, 0.5, 2);
+
+		@media #{$media-max-width-tablet} {
+			flex-direction: column;
+			width: 100vh;
+			position: absolute;
+			margin: auto;
+			height: auto;
+			top: 0;
+			right: 0;
+			bottom: auto;
+			left: auto;
+			background-color: rgba(darken($color-base, 30), 0.6);
+			transform-origin: 50% 0;
+			transform: rotateX(90deg);
+
+			padding-top: var(--height);
+		}
+
+		@media #{$media-smartphone} {
+			max-width: 70vh;
+		}
+
+		@media #{$media-tablet} {
+		}
+
+		&--item {
+			display: flex;
+
+			@media #{$media-max-width-tablet} {
+				min-height: 40px;
+			}
+		}
+
+		&--link {
+			color: black;
+			display: flex;
+			align-items: center;
+			color: white;
+			text-transform: uppercase;
+			font-size: 0.85rem;
+			padding: 0 10px;
+			border-radius: var(--border-radius-button);
+			transition: 150ms ease;
+
+			// Bordes
+			border-width: 2px;
+			border-style: solid;
+			border-color: transparent;
+
+			// Smartphone
+			@media #{$media-max-width-tablet} {
+				width: 100%;
+				border-radius: 0;
+			}
+
+			&:hover,
+			&:focus {
+				background-color: rgba($color-base, 0.2);
+				color: lighten($color-base, 70);
+
+				text-decoration: none;
+			}
+
+			&:active {
+				// color: lighten($color-base, 30);
+				background-color: rgba(saturate(darken($color-base, 20), 50), 0.55);
+				// box-shadow: inset 0 0 20px 1px rgba($color-base, 0.55);
+				// background-color: transparent;
+			}
+		}
+	}
+}
+
+.header {
+	position: relative;
+	background-color: darken($color-base, 30);
+	&--fondo {
+		position: absolute;
+		margin: auto;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		overflow: hidden;
+		z-index: 0;
+
+		// Propiedades comunes
+		&::before,
+		&::after {
+			content: "";
+			display: block;
+			position: absolute;
+			margin: auto;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+		}
+
+		// Imagen de fondo
+		&::before {
+			background-image: url("../images/fotos/banners-portada-p.jpg");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 100% auto;
+
+			-webkit-background-clip: content-box;
+			background-clip: content-box;
+
+			// Aplicación de filtros
+			filter: blur(2px);
+		}
+
+		// Color de fondo
+		&::after {
+			$color: darken($color-base, 30);
+			background-color: rgba($color, 0.7);
+
+			// Solapamiento
+			z-index: 0;
+		}
+	}
+
+	&--nav {
+		width: 100%;
+		&-fixed {
+			position: fixed;
+			margin: auto;
+			left: 0;
+			right: 0;
+
+			z-index: 99;
+		}
+	}
+}
+
+// Personalizacion de algunos estilos de Bootstrap:
+.container {
+	&-fluid {
+		padding-left: 0;
+		padding-right: 0;
+
+		// Aplicables a todas las imagenes:
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+}

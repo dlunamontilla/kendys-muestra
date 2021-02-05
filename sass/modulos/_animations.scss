@@ -1,0 +1,47 @@
+@keyframes desplegar {
+  0% {
+    transform: scale(0.98) rotateX(30deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rotarX {
+  from {
+    opacity: 0;
+    transform: rotateX(80deg);
+  }
+}
+
+@keyframes rotarY {
+  from {
+    opacity: 0;
+    transform: rotateY(80deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fijar {
+  from {
+    transform: scale(0.98);
+    opacity: 0.5;
+  }
+}
+
+.fadeOut {
+  animation: 300ms ease fadeOut 1;
+}
+
+.fijar:target {
+  animation: 300ms cubic-bezier(0.3, 0, 0, 1) fijar 1;
+}

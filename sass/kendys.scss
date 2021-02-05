@@ -1,0 +1,70 @@
+// Funciones, variables y mixins
+@import "modulos/vars.scss";
+@import "modulos/mixins";
+@import "modulos/functions";
+
+// Estilos predeterminados
+::-moz-focus-inner {
+	border: 0;
+	border-style: none;
+}
+
+html, body {
+	padding: 0;
+	margin: 0;
+
+	font: {
+		size: 1rem;
+		family: "Open sans", sans-serif, arial;
+	}
+
+	color: $color-base;
+	background-color: lighten($color-base, 56);
+}
+
+body {
+	height: 100vh;
+}
+
+* {
+	box-sizing: border-box;
+
+	&::before, &::after {
+		box-sizing: inherit;
+	}
+}
+
+hr {
+	border: 0;
+	border-bottom: 1px solid rgba(black, 0.2);
+}
+.none {display: none;}
+
+// Animaciones
+@import "modulos/animations";
+
+// Fuentes tipográficas
+@import "modulos/fonts";
+
+
+// Resto de las hojas de estilos 
+@import "modulos/personalizados";
+@import "modulos/header";
+@import "modulos/main";
+@import "modulos/footer";
+@import "modulos/forms";
+
+// Estilos personalizados
+@import "modulos/carrito";
+
+// Colores
+@import "modulos/colors";
+
+// Interpolación de propiedades
+@include interpolar(width);
+@include interpolar(height, "vh");
+@include interpolar(height);
+@include interpolar(min-height, "vh");
+@include interpolar(height, "px", 500);
+@include interpolar(margin-bottom, "px", 100);
+@include interpolar(margin-top, "px", 100);

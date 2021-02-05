@@ -1,0 +1,13 @@
+// Propiedades
+@function propiedad($valor, $unidad) {
+  @if $valor == 0 {
+    @return 0;
+  }
+
+  @return unquote($valor + $unidad);
+}
+
+// Columnas 
+@function columnas($col: 1) {
+  @return  100 / $col + vw;
+}

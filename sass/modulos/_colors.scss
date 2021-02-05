@@ -1,0 +1,67 @@
+// Colores de fondo
+.bc {
+  &--red {
+    background-color: #ff0000;
+  }
+  
+  &--black {
+    background-color: #000;
+  }
+
+  // Tono de grises
+  &--gray-5 {
+    background-color: darken(white, 5);
+  }
+  
+  @for $index from 1 to 10 {
+    $color: $index * 10;
+
+    &--gray-#{$color} {
+      background-color: darken(white, $color);
+    }
+  }
+
+  &--base {
+    background-color: $color-base;
+  }
+}
+
+// Colores de texto
+.fc {
+  &--white {
+    color: white;
+  }
+
+  &--base {
+    color: $color-base;
+  }
+
+  &--facebook {
+    color: $color-facebook;
+  }
+
+  &--twitter {
+    color: $color-twitter;
+  }
+
+  &--instagram {
+    color: $color-instagram;
+  }
+
+  // Negro
+  &--black {
+    color: #000;
+  }
+
+  // Colores grises de diferentes tonalidades
+  &--gray-5 {
+    color: darken(white, 5);
+  }
+  @for $color from 1 to 10 {
+    $num: $color * 10;
+
+    &--gray-#{$num} {
+      color: darken(white, $num);
+    }
+  }
+}

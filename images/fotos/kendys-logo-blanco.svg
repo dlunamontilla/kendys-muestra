@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="svg2"
+   width="377.95276"
+   height="377.95276"
+   viewBox="0 0 377.95276 377.95276"
+   sodipodi:docname="favicon.svg"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   inkscape:export-filename="/home/david/aplicaciones/Freelancer/kendys/public/images/fotos/favicon.png"
+   inkscape:export-xdpi="32.509998"
+   inkscape:export-ydpi="32.509998">
+  <metadata
+     id="metadata8">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs6">
+    <inkscape:path-effect
+       only_selected="false"
+       apply_with_weight="true"
+       apply_no_weight="true"
+       helper_size="0"
+       steps="2"
+       weight="33.333333"
+       is_visible="true"
+       id="path-effect1004"
+       effect="bspline" />
+    <inkscape:path-effect
+       effect="bspline"
+       id="path-effect1000"
+       is_visible="true"
+       weight="33.333333"
+       steps="2"
+       helper_size="0"
+       apply_no_weight="true"
+       apply_with_weight="true"
+       only_selected="false" />
+    <inkscape:path-effect
+       effect="spiro"
+       id="path-effect996"
+       is_visible="true" />
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1546"
+     inkscape:window-height="845"
+     id="namedview4"
+     showgrid="false"
+     inkscape:zoom="0.35355339"
+     inkscape:cx="-196.27048"
+     inkscape:cy="207.43203"
+     inkscape:window-x="54"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g1081"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:snap-global="true"
+     inkscape:snap-page="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <g
+     id="g1081"
+     transform="translate(-210.22165,-185.43707)">
+    <g
+       id="g1116">
+      <g
+         style="stroke-width:1.38875818"
+         transform="matrix(0.72006777,0,0,0.72006777,111.45375,170.39878)"
+         id="g1073">
+        <g
+           style="stroke-width:1.38875818"
+           transform="translate(-566.41036,33.509668)"
+           id="g880">
+          <path
+             inkscape:connector-curvature="0"
+             style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:38.84148407;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             d="M 853.23047,13.619141 V 255.35938 L 1039.4941,13.619141 Z m 41.99414,258.050779 -41.99414,53.8418 v 160.5039 h 197.93163 z"
+             id="path875" />
+          <path
+             inkscape:connector-curvature="0"
+             style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:38.84148407;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             d="M 1078.8047,47.69839 936.5762,228.5519 1078.8047,424.05581 Z"
+             id="path873" />
+        </g>
+      </g>
+      <rect
+         y="185.43707"
+         x="210.22165"
+         height="377.95276"
+         width="377.95276"
+         id="rect1102"
+         style="opacity:1;fill:none;fill-opacity:1;stroke:none;stroke-width:27.96850395;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </g>
+  </g>
+</svg>

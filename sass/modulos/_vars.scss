@@ -1,0 +1,34 @@
+$color-base: #aa9333;
+$color-oscuro: #252525;
+
+// Media Queries
+$media-smartphone: "screen and (max-width: 480px)";
+$media-tablet: "screen and (min-width: 481px) and (max-width: 960px)";
+$media-pc: "screen and (min-width: 961px)";
+$media-max-width-tablet: "screen and (max-width: 960px)";
+// 
+// Relación de aspecto
+$landscape: "(orientation: landscape)";
+$portrait: "(orientation: portrait)";
+
+:root {
+	--border-radius-button: 5px;
+}
+
+// Colores
+$info--link: darken($color-base, 26);
+
+// Colores de las redes sociales (Pendiente por modificar)
+$color-facebook: #000000;
+$color-twitter: #000000;
+$color-instagram: #000000;
+$color-google: #000000;
+
+// Separación
+$padding-left: 10px;
+
+// Anchura:
+$width: 100%;
+$max-width: 1200px;
+$width-layer: calc(#{$width} - 20px);
+$height: 100vh;
