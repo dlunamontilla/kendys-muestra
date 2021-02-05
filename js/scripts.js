@@ -224,15 +224,6 @@ const elemento = (selector) => document.querySelector(selector);
 
 (function (window) {
   const enlaces = elementos("a[href]");
-  const postImages = elementos("img[class*='post--image']");
-  const imagenes = [
-    "https://cdn.pixabay.com/photo/2019/04/02/16/11/cat-4098058_960_720.jpg",
-    "https://cdn.pixabay.com/photo/2020/12/18/15/29/mountains-5842346_960_720.jpg",
-    "https://cdn.pixabay.com/photo/2020/12/25/11/19/candle-5859094_960_720.jpg",
-    "https://cdn.pixabay.com/photo/2021/01/29/19/28/arctic-wolf-5961985_960_720.jpg",
-    "https://cdn.pixabay.com/photo/2020/12/18/15/29/mountains-5842346_960_720.jpg",
-    "https://cdn.pixabay.com/photo/2020/12/25/11/19/candle-5859094_960_720.jpg"
-  ];
 
   enlaces.forEach(enlace => {
     let comprobar = /(\#)/g;
@@ -253,9 +244,4 @@ const elemento = (selector) => document.querySelector(selector);
     }
   });
 
-  // Imágenes:
-  console.clear();
-  postImages.forEach((postImage, key) => {
-    postImage.setAttribute("src", imagenes[key]);
-  });
 }(window));

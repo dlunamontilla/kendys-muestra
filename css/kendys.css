@@ -1421,6 +1421,11 @@ body {
   color: white;
   padding-bottom: 20px;
 }
+@media screen and (max-width: 1024px) {
+  .sliders--left {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
 .sliders--left h1,
 .sliders--left h2,
 .sliders--left h3,
@@ -2650,6 +2655,29 @@ body {
 }
 .pro-rel--precio {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.sliders--right {
+  position: relative;
+}
+.sliders--right::before {
+  background-color: rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.5), transparent);
+  z-index: 1;
+}
+.sliders--right::before, .sliders--right::after {
+  content: "";
+  display: block;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.sliders--text {
+  z-index: 10;
 }
 
 .footer {

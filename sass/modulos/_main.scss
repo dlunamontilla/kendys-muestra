@@ -645,6 +645,10 @@
 		background-color: $color-oscuro;
 		color: white;
 
+		@media screen and (max-width: 1024px) {
+			border-bottom: 1px solid rgba(white, 0.2);
+		}
+
 		h1,
 		h2,
 		h3,
@@ -2186,4 +2190,28 @@
 	&--precio {
 		border-bottom: 1px solid rgba(black, 0.1);
 	}
+}
+
+.sliders--right {
+	position: relative;
+
+	&::before {
+		background-color: rgba(black, 0.5);
+		background-image: linear-gradient(to left, rgba(black, 0.5), transparent);
+		z-index: 1;
+	}
+
+	&::before,
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		margin: auto;
+		left: 0; right: 0;
+		top: 0; bottom: 0;
+	}
+}
+
+.sliders--text {
+	z-index: 10;
 }
